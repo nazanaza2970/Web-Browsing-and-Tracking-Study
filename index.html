@@ -23,85 +23,52 @@
     background: var(--bg);
     line-height: 1.55;
   }
-  .wrap {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 28px 24px 60px;
-  }
-  h1 {
-    font-size: 1.3rem;
-    margin: 0 0 4px;
-    letter-spacing: -0.01em;
-  }
-  .subtitle {
-    color: var(--muted);
-    font-size: 0.92rem;
-    margin: 0 0 20px;
-  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 20px 20px 40px; }
+  h1 { font-size: 1.2rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
   .card {
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 20px 22px;
-    margin-bottom: 16px;
-    background: var(--panel);
+    border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px;
+    margin-bottom: 14px; background: var(--panel);
   }
   .card h2 {
-    font-size: 0.76rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin: 0 0 10px;
+    font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); margin: 0 0 10px;
   }
-  .card p { margin: 0 0 10px; font-size: 0.94rem; }
+  .card p { margin: 0 0 10px; font-size: 0.92rem; }
   .card p:last-child { margin-bottom: 0; }
-  ul.steps { margin: 0; padding-left: 20px; font-size: 0.94rem; }
+  ul.steps { margin: 0; padding-left: 20px; font-size: 0.92rem; }
   ul.steps li { margin-bottom: 6px; }
   .doc-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
   .doc-links li {
     display: flex; align-items: center; justify-content: space-between;
-    border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fff;
+    border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff;
   }
-  .doc-links .label { font-size: 0.9rem; font-weight: 500; }
-  .doc-links .desc { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
-  a.btn, button.btn {
-    text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--accent);
-    border: 1px solid var(--accent); border-radius: 6px; padding: 7px 14px;
-    white-space: nowrap; background: #fff; cursor: pointer; font-family: inherit;
+  .doc-links .label { font-size: 0.88rem; font-weight: 500; }
+  .doc-links .desc { display: block; font-weight: 400; color: var(--muted); font-size: 0.76rem; margin-top: 2px; }
+  a.btn {
+    text-decoration: none; font-size: 0.82rem; font-weight: 600; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 6px; padding: 6px 12px; white-space: nowrap;
   }
-  a.btn:hover, button.btn:hover { background: var(--accent); color: #fff; }
-  a.btn.primary, button.btn.primary { background: var(--accent); color: #fff; }
-  a.btn.primary:hover, button.btn.primary:hover { opacity: 0.9; background: var(--accent); }
-  button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .note { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
-  table.sitelist { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-  table.sitelist td {
-    padding: 7px 8px; border-bottom: 1px solid var(--line); word-break: break-all;
-  }
-  table.sitelist td.idx { width: 24px; color: var(--muted); }
+  a.btn:hover { background: var(--accent); color: #fff; }
+  a.btn.primary { background: var(--accent); color: #fff; }
+  a.btn.primary:hover { opacity: 0.9; background: var(--accent); }
+  .note { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
+  table.sitelist { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  table.sitelist td { padding: 6px 8px; border-bottom: 1px solid var(--line); word-break: break-all; }
+  table.sitelist td.idx { width: 22px; color: var(--muted); }
   .warn {
     background: var(--warn-bg); border: 1px solid var(--warn-line);
-    border-radius: 8px; padding: 14px 16px; font-size: 0.88rem; margin-bottom: 16px;
+    border-radius: 8px; padding: 12px 14px; font-size: 0.86rem; margin-bottom: 14px;
   }
-  hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
-  .footer { font-size: 0.76rem; color: var(--muted); text-align: center; }
-  .checkbox-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; margin-top: 12px; }
-  .checkbox-row input { margin-top: 3px; }
-  #error-state, #accept-state, #not-accepted-state { display: none; }
-  .center { text-align: center; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <h1>Web Browsing Study: Website Security Signal Measurement</h1>
-  <p class="subtitle">Approx. 30&ndash;45 minutes &middot; Browser extension required &middot; Chromium-based browser only</p>
+  <p class="subtitle">Approx. 1 hour &middot; Browser extension required &middot; Chromium-based browser only</p>
 
-  <div id="not-accepted-state" class="warn">
-    <strong>You must accept this HIT before you can complete or submit the task.</strong>
-    Please accept the HIT in MTurk, then reload this page.
-  </div>
-
-  <div id="error-state" class="warn">
+  <div id="error-state" class="warn" style="display:none;">
     <strong>This task list could not be loaded.</strong>
     <span id="error-detail"></span> Please do not proceed &mdash; return the HIT or contact the requester via MTurk messaging.
   </div>
@@ -111,18 +78,18 @@
     <div class="card">
       <h2>Task Description</h2>
       <p>
-        You'll install a small browser extension, then visit the 15 assigned public
-        websites below (browsing at least 10 pages per site) using a clean, standard
-        Chromium browser profile. The extension logs technical, website-side signals
-        (such as firewall/anti-bot responses) &mdash; it does not collect your personal
-        information, keystrokes, cookies, or credentials.
+        Install the browser extension below, then visit the 15 assigned public
+        websites listed at the bottom of this page (browsing at least 10 pages per
+        site) using a clean, standard Chromium browser profile. The extension logs
+        technical, website-side signals (such as firewall/anti-bot responses) &mdash;
+        it does not collect your personal information, keystrokes, cookies, or credentials.
       </p>
       <ul class="steps">
-        <li>Review the instructions, consent form, and PII disclosure below <em>before</em> continuing.</li>
+        <li>Review the instructions, consent form, and PII disclosure below <em>before</em> starting.</li>
         <li>Install the provided browser extension.</li>
         <li>Start from a fresh browser profile (clear cookies/history/cache) with no VPN, proxy, or other extensions active.</li>
-        <li>Visit each of your assigned websites below and browse at least 10 subpages per site.</li>
-        <li>Check the box and click "Submit HIT" when finished.</li>
+        <li>Visit each assigned website below and browse at least 10 subpages per site.</li>
+        <li>Return to the main task window and check the confirmation box, then submit.</li>
       </ul>
     </div>
 
@@ -160,21 +127,7 @@
       </table>
     </div>
 
-    <hr>
-
-    <form id="mturk-form" method="post">
-      <input type="hidden" name="assignmentId" id="assignmentId-field">
-      <div class="checkbox-row">
-        <input type="checkbox" id="confirm-check">
-        <label for="confirm-check">I have read the consent form and PII disclosure, and I have completed browsing all 15 assigned websites as instructed.</label>
-      </div>
-      <p class="note center" style="margin-top:16px;">
-        <button type="submit" class="btn primary" id="submit-btn" disabled>Submit HIT</button>
-      </p>
-    </form>
   </div>
-
-  <p class="footer">Questions? Contact the research team through Amazon Mechanical Turk messaging before accepting the HIT.</p>
 </div>
 
 <script>
@@ -184,22 +137,9 @@
   }
 
   var listId = getParam('list');
-  var assignmentId = getParam('assignmentId');
-  var workerId = getParam('workerId');
-  var hitId = getParam('hitId');
-
   var mainContent = document.getElementById('main-content');
-  var notAccepted = document.getElementById('not-accepted-state');
   var errorState = document.getElementById('error-state');
   var errorDetail = document.getElementById('error-detail');
-
-  // MTurk sets assignmentId to "ASSIGNMENT_ID_NOT_AVAILABLE" when the HIT
-  // is being previewed rather than accepted.
-  if (!assignmentId || assignmentId === 'ASSIGNMENT_ID_NOT_AVAILABLE') {
-    mainContent.style.display = 'none';
-    notAccepted.style.display = 'block';
-    return;
-  }
 
   if (!listId) {
     mainContent.style.display = 'none';
@@ -208,19 +148,8 @@
     return;
   }
 
-  // Wire the hidden assignmentId field and the form action so the HIT
-  // auto-submits back to MTurk (sandbox vs production endpoint detection).
-  document.getElementById('assignmentId-field').value = assignmentId;
-  var isSandbox = window.location.href.indexOf('sandbox') !== -1 ||
-                  document.referrer.indexOf('workersandbox') !== -1;
-  var submitTo = isSandbox
-    ? 'https://workersandbox.mturk.com/mturk/externalSubmit'
-    : 'https://www.mturk.com/mturk/externalSubmit';
-  document.getElementById('mturk-form').action = submitTo;
-
   document.getElementById('list-id-label').textContent = 'List ' + listId;
 
-  // Load the assigned 15-site list.
   fetch('lists/' + listId + '.json')
     .then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -251,13 +180,6 @@
       errorDetail.textContent = 'Could not load lists/' + listId + '.json (' + err.message + ').';
       errorState.style.display = 'block';
     });
-
-  // Enable submit only once the confirmation checkbox is checked.
-  var checkbox = document.getElementById('confirm-check');
-  var submitBtn = document.getElementById('submit-btn');
-  checkbox.addEventListener('change', function () {
-    submitBtn.disabled = !checkbox.checked;
-  });
 })();
 </script>
 </body>
