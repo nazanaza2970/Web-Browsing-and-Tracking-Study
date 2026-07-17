@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Browsing Study - Task</title>
+<style>
+  :root {
+    --ink: #1c1f26;
+    --muted: #5b6270;
+    --line: #dfe3e8;
+    --accent: #2f5d8a;
+    --bg: #ffffff;
+    --panel: #f6f8fa;
+    --warn-bg: #fff8e6;
+    --warn-line: #e8d68a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 0 20px;
+  }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    background: var(--panel);
+  }
+  .card h2 {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  .card p { margin: 0 0 10px; font-size: 0.94rem; }
+  .card p:last-child { margin-bottom: 0; }
+  ul.steps { margin: 0; padding-left: 20px; font-size: 0.94rem; }
+  ul.steps li { margin-bottom: 6px; }
+  .doc-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .doc-links li {
+    display: flex; align-items: center; justify-content: space-between;
+    border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fff;
+  }
+  .doc-links .label { font-size: 0.9rem; font-weight: 500; }
+  .doc-links .desc { display: block; font-weight: 400; color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
+  a.btn, button.btn {
+    text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 6px; padding: 7px 14px;
+    white-space: nowrap; background: #fff; cursor: pointer; font-family: inherit;
+  }
+  a.btn:hover, button.btn:hover { background: var(--accent); color: #fff; }
+  a.btn.primary, button.btn.primary { background: var(--accent); color: #fff; }
+  a.btn.primary:hover, button.btn.primary:hover { opacity: 0.9; background: var(--accent); }
+  button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .note { font-size: 0.8rem; color: var(--muted); margin-top: 6px; }
+  table.sitelist { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  table.sitelist td {
+    padding: 7px 8px; border-bottom: 1px solid var(--line); word-break: break-all;
+  }
+  table.sitelist td.idx { width: 24px; color: var(--muted); }
+  .warn {
+    background: var(--warn-bg); border: 1px solid var(--warn-line);
+    border-radius: 8px; padding: 14px 16px; font-size: 0.88rem; margin-bottom: 16px;
+  }
+  hr { border: none; border-top: 1px solid var(--line); margin: 24px 0; }
+  .footer { font-size: 0.76rem; color: var(--muted); text-align: center; }
+  .checkbox-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; margin-top: 12px; }
+  .checkbox-row input { margin-top: 3px; }
+  #error-state, #accept-state, #not-accepted-state { display: none; }
+  .center { text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Web Browsing Study: Website Security Signal Measurement</h1>
+  <p class="subtitle">Approx. 30&ndash;45 minutes &middot; Browser extension required &middot; Chromium-based browser only</p>
+
+  <div id="not-accepted-state" class="warn">
+    <strong>You must accept this HIT before you can complete or submit the task.</strong>
+    Please accept the HIT in MTurk, then reload this page.
+  </div>
+
+  <div id="error-state" class="warn">
+    <strong>This task list could not be loaded.</strong>
+    <span id="error-detail"></span> Please do not proceed &mdash; return the HIT or contact the requester via MTurk messaging.
+  </div>
+
+  <div id="main-content">
+
+    <div class="card">
+      <h2>Task Description</h2>
+      <p>
+        You'll install a small browser extension, then visit the 15 assigned public
+        websites below (browsing at least 10 pages per site) using a clean, standard
+        Chromium browser profile. The extension logs technical, website-side signals
+        (such as firewall/anti-bot responses) &mdash; it does not collect your personal
+        information, keystrokes, cookies, or credentials.
+      </p>
+      <ul class="steps">
+        <li>Review the instructions, consent form, and PII disclosure below <em>before</em> continuing.</li>
+        <li>Install the provided browser extension.</li>
+        <li>Start from a fresh browser profile (clear cookies/history/cache) with no VPN, proxy, or other extensions active.</li>
+        <li>Visit each of your assigned websites below and browse at least 10 subpages per site.</li>
+        <li>Check the box and click "Submit HIT" when finished.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Documents to Review</h2>
+      <ul class="doc-links">
+        <li>
+          <span class="label">Task Instructions<span class="desc">Step-by-step guide to completing the study</span></span>
+          <a class="btn" href="docs/instructions.pdf" target="_blank" rel="noopener">View PDF</a>
+        </li>
+        <li>
+          <span class="label">Informed Consent Form<span class="desc">What participation involves and your rights</span></span>
+          <a class="btn" href="docs/consent.pdf" target="_blank" rel="noopener">View PDF</a>
+        </li>
+        <li>
+          <span class="label">PII Disclosure Memo<span class="desc">Exactly what data is (and isn't) collected</span></span>
+          <a class="btn" href="docs/pii_disclosure.pdf" target="_blank" rel="noopener">View PDF</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Browser Extension</h2>
+      <p>Download and install the extension before beginning the task:</p>
+      <a class="btn primary" href="extension/extension.zip" target="_blank" rel="noopener" download>Download Extension</a>
+      <p class="note">Compatible with Chrome and other Chromium-based browsers. Requires no account creation or permissions beyond standard browsing.</p>
+    </div>
+
+    <div class="card">
+      <h2>Your Assigned Websites (<span id="list-id-label">&hellip;</span>)</h2>
+      <table class="sitelist" id="site-table">
+        <tbody id="site-table-body">
+          <tr><td colspan="2">Loading assigned list&hellip;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <form id="mturk-form" method="post">
+      <input type="hidden" name="assignmentId" id="assignmentId-field">
+      <div class="checkbox-row">
+        <input type="checkbox" id="confirm-check">
+        <label for="confirm-check">I have read the consent form and PII disclosure, and I have completed browsing all 15 assigned websites as instructed.</label>
+      </div>
+      <p class="note center" style="margin-top:16px;">
+        <button type="submit" class="btn primary" id="submit-btn" disabled>Submit HIT</button>
+      </p>
+    </form>
+  </div>
+
+  <p class="footer">Questions? Contact the research team through Amazon Mechanical Turk messaging before accepting the HIT.</p>
+</div>
+
+<script>
+(function () {
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  var listId = getParam('list');
+  var assignmentId = getParam('assignmentId');
+  var workerId = getParam('workerId');
+  var hitId = getParam('hitId');
+
+  var mainContent = document.getElementById('main-content');
+  var notAccepted = document.getElementById('not-accepted-state');
+  var errorState = document.getElementById('error-state');
+  var errorDetail = document.getElementById('error-detail');
+
+  // MTurk sets assignmentId to "ASSIGNMENT_ID_NOT_AVAILABLE" when the HIT
+  // is being previewed rather than accepted.
+  if (!assignmentId || assignmentId === 'ASSIGNMENT_ID_NOT_AVAILABLE') {
+    mainContent.style.display = 'none';
+    notAccepted.style.display = 'block';
+    return;
+  }
+
+  if (!listId) {
+    mainContent.style.display = 'none';
+    errorDetail.textContent = 'No list ID was provided in the task link.';
+    errorState.style.display = 'block';
+    return;
+  }
+
+  // Wire the hidden assignmentId field and the form action so the HIT
+  // auto-submits back to MTurk (sandbox vs production endpoint detection).
+  document.getElementById('assignmentId-field').value = assignmentId;
+  var isSandbox = window.location.href.indexOf('sandbox') !== -1 ||
+                  document.referrer.indexOf('workersandbox') !== -1;
+  var submitTo = isSandbox
+    ? 'https://workersandbox.mturk.com/mturk/externalSubmit'
+    : 'https://www.mturk.com/mturk/externalSubmit';
+  document.getElementById('mturk-form').action = submitTo;
+
+  document.getElementById('list-id-label').textContent = 'List ' + listId;
+
+  // Load the assigned 15-site list.
+  fetch('lists/' + listId + '.json')
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (sites) {
+      var tbody = document.getElementById('site-table-body');
+      tbody.innerHTML = '';
+      sites.forEach(function (url, i) {
+        var tr = document.createElement('tr');
+        var tdIdx = document.createElement('td');
+        tdIdx.className = 'idx';
+        tdIdx.textContent = (i + 1) + '.';
+        var tdUrl = document.createElement('td');
+        var a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = url;
+        tdUrl.appendChild(a);
+        tr.appendChild(tdIdx);
+        tr.appendChild(tdUrl);
+        tbody.appendChild(tr);
+      });
+    })
+    .catch(function (err) {
+      mainContent.style.display = 'none';
+      errorDetail.textContent = 'Could not load lists/' + listId + '.json (' + err.message + ').';
+      errorState.style.display = 'block';
+    });
+
+  // Enable submit only once the confirmation checkbox is checked.
+  var checkbox = document.getElementById('confirm-check');
+  var submitBtn = document.getElementById('submit-btn');
+  checkbox.addEventListener('change', function () {
+    submitBtn.disabled = !checkbox.checked;
+  });
+})();
+</script>
+</body>
+</html>
